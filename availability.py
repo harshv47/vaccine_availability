@@ -40,12 +40,13 @@ def get_availability(days: int, district_ids: List[int], max_age_criteria: int):
         print(f"checking for INP_DATE:{INP_DATE} & DIST_ID:{district_id}")
         URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(district_id, INP_DATE)
         while True:
-            try :
+            try:
                 response = requests.get(URL)
                 data = json.loads(response.text)['centers']
                 break
-             except:
+            except:
                 continue
+            
         df = pd.DataFrame(data)
         df = df.explode("sessions")
         df['min_age_limit'] = df.sessions.apply(lambda x: x['min_age_limit'])
