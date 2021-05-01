@@ -107,8 +107,8 @@ def send_email(data_frame, age):
 if __name__ == "__main__":
     Patna = 97
     dist_ids = [Patna]
-    next_n_days = 3
-    max_age_criteria = 50
+    next_n_days = 20
+    max_age_criteria = 40
 
     availability_data = get_availability(next_n_days, dist_ids, max_age_criteria)
     print(availability_data)
