@@ -111,5 +111,5 @@ if __name__ == "__main__":
     max_age_criteria = 40
 
     availability_data = get_availability(next_n_days, dist_ids, max_age_criteria)
-    print(availability_data)
+    #print(availability_data)
     send_email(availability_data, max_age_criteria)
