@@ -44,7 +44,7 @@ def get_availability(days: int, district_ids: List[int], max_age_criteria: int):
                 response = requests.get(URL)
                 data = json.loads(response.text)['centers']
                 break
-            except:
+             except:
                 continue
         df = pd.DataFrame(data)
         df = df.explode("sessions")
